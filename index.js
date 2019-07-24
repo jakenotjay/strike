@@ -1,10 +1,4 @@
-/*
-Encrypted data files stored locally
-Name
-Password
-Location
-File Location of output files
-*/
+require('dotenv').config();
 const readingFolder = './test';
 const fs = require("fs");
 const readline = require('readline');
@@ -12,9 +6,9 @@ const sane = require('sane');
 const net = require('net');
 
 console.log("Starting lightning strike:")
-const location = "Stag Hill";
-const latitude = 51.243749;
-const longitude = -0.589723;
+const location = process.env.location;
+const latitude = process.env.latitude;
+const longitude = process.env.longitude;
 
 console.log("Checking details \n")
 if(validDetails(true)) {
@@ -81,7 +75,7 @@ async function parseData(filepath) {
 function sendData(fileData){
     var client = new net.Socket();
 
-    client.connect(10337, 'localhost', () => {
+    client.connect(10337, process.env.url, () => {
         client.write(JSON.stringify(fileData));
     })
 
