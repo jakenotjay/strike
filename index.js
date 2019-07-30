@@ -1,5 +1,5 @@
 require('dotenv').config();
-const readingFolder = './test';
+const readingFolder = process.env.file;
 const fs = require("fs");
 const readline = require('readline');
 const sane = require('sane');
@@ -77,6 +77,7 @@ function sendData(fileData){
 
     client.connect(10337, process.env.url, () => {
         client.write(JSON.stringify(fileData));
+        client.end();
     })
 
     console.log('Data sent');
