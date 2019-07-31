@@ -59,7 +59,8 @@ async function parseData(filepath) {
         
         rl.on('line', function (line){
             if (line.includes("t0 =")){
-                fileData.dateTime = line.split(/(= )/)[2].split(/,/)[0];
+                var date = new Date(line.split(/(= )/)[2].split(/,/)[0]);
+                fileData.dateTime = date.getUTCFullYear()+'-'+ (date.getUTCMonth()+1) + '-' + date.getUTCDate() + ' ' + date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
             } else {
                 var tabSeperated = line.split('\t');
                 fileData.readingData.push(tabSeperated[0]);
