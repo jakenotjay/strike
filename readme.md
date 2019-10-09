@@ -12,11 +12,15 @@ Strike is the client-side software that controls the data flow of sensors. It wa
     > Note this is using HTTPS, if you would prefer SSH your details must be added to the repository, contact the author
 
 4. Navigate into the strike directory and install the node modules:
+
         cd ./strike
         npm install
+        
 5. Configurate the hidden .env file with a text editor, a detailed description is provided below
 6. Run strike, you can simply type into the console:
+
         npm start
+        
 7. (Optional) Test strike is running by configuring the .env to look at the test folder and drag and drop the test file outside the folder and back in again
 8. (Optional) Run strike using PM2 for better error managemet and logging capabilities
         
