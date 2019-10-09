@@ -31,6 +31,7 @@ Strike is the client-side software that controls the data flow of sensors. It wa
 
 ## .env Configuration
 There are five configuration options for the .env, they are as follows and should be configured before any use:
+
 1. The location of the sensor, this is a simple string that describes sensor location for example "Stag Hill"
 
         location = "Stag Hill"
